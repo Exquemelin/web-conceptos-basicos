@@ -1,0 +1,16 @@
+body {
+    background: orange;
+    color: green;
+}
+
+h3, h2 {
+    color: red;
+}
+
+#google-chrome {
+    background: blue;
+}
+
+[id='vs-code'] {
+    background: black;
+}
