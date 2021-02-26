@@ -1,0 +1,233 @@
+@font-face {
+    font-family: charter;
+    src: url('../fonts/charter-regular.otf');
+    font-style: normal;
+    font-weight: 400; /* Es el peso normal de una fuente normal */
+}
+
+@font-face {
+    font-family: charter;
+    src: url('../fonts/charter-italic.otf');
+    font-style: italic;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: charter;
+    src: url('../fonts/charter-bold.otf');
+    font-style: normal;
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: charter;
+    src: url('../fonts/charter-bold-italic.otf');
+    font-style: italic;
+    font-weight: bold;
+}
+
+/* html es igual a :root, aunque este tiene más especifidad */
+:root {
+    font-size: 16px;
+    --gray10: #212121;
+    --gray20: #212429;
+    --gray30: #424242;
+    --gray40: #616161;
+}
+
+html {
+    /* Vamos a decirle que con los enlaces se haga scroll scroll suave a la hora de navegar  */
+    scroll-behavior: smooth;
+}
+
+body {
+    color: var(--gray10);
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+.main {
+    /* border: 1px solid red; */
+    /* background: purple; */
+    /* position: relative; */
+}
+
+.wrapper {
+    /* background: red; */
+    width: 902px;
+    margin: auto;
+}
+
+.content {
+    /* background: blue; */
+    /* padding: 20px; */
+}
+
+a {
+    color: var(--gray10)
+}
+
+header {
+    /* --gray10: red; */
+    color: var(--gray10);
+    font-size: 14px;
+    position: absolute;
+    border: 3px solid purple;
+    /* top left bottom right z-index */
+    top: 74px;
+    /* bottom: 0; */
+    /* right: 0; */
+    left: -232px;
+    /* left: 0; */
+    /* right: 30px; */
+    /* z-index: -1; */
+    width: 188px;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+}
+
+.header-content {
+    position: relative;
+}
+
+header a {
+    color: var(--gray40);
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+header a:hover {
+    color: var(--gray10);
+}
+
+nav details summary {
+    font-weight: bold;
+}
+
+h1 {
+    /* font-size: 60px; */
+    font-size: 3.75em;
+    /* margin: top right bottom left; */
+    /* margin: 64px 10px 16px 20px */
+    margin-top: 64px;
+    margin-bottom: 16px;
+    font-weight: 400;
+    /* border: 10px solid red;
+    width: 400px;
+    height: 400px;
+    padding: 40px; */
+}
+
+/* Vamos a darle style al p que está justo pegado al h1 */
+h1 + p {
+    margin-bottom: 64px;
+}
+
+hr {
+    color: var(--gray40);
+    margin: 64px 0;
+}
+
+h2 {
+    font-size: 2em;
+    font-weight: normal;
+    margin: 64px 0 40px;
+}
+
+h3 {
+    font-size: 1.5em;
+    font-weight: normal;
+    margin-top: 16px;
+    margin-bottom: 24px;
+    width: 900px;
+    /* border: 1px solid red; */
+    /* box-sizing: border-box; Limitamos el total al width establecido */
+    position: relative;
+    /* top: 0px;
+    background: white; */
+}
+
+pre {
+    background: #FEC62E; /* Backgroun de la ventana de código pre*/
+    font-family: 'Roboto';
+    line-height: 24px;
+    padding: 40px;
+}
+
+.hero {
+    /* background: linear-gradient(to top, red, blue), url('../images/patron-1.png'); */
+    background: linear-gradient(to top, rgba(255, 255, 255, .43), transparent), url('../images/patron-1.png');
+    /* background: linear-gradient(3.36deg, #212325 -63.62%, rgba(255, 255, 255, 0) 43.49%), url('../images/patron-1.png'); */
+    /* background-repeat: no-repeat; */
+    /* background-position: left 50px top 100px; */
+    /* background-size: cover; */
+    height: 350px;
+}
+
+.section-content {
+    counter-reset: titleList;
+    margin-top: 164px;
+}
+
+.section-content:first-of-type {
+    margin: 0;
+}
+
+.section-content h3 {
+    counter-increment: titleList;
+}
+
+.section-content h3::before{
+    content: counter(titleList, decimal) ". ";
+}
+
+.section-content h3::after{
+    /* border: 3px solid red; */
+    content: '';
+    background: var(--gray30);
+    display: inline-block;
+    height: 4px;
+    /* left: 0px;
+    top: 32px; */
+    width: 80px;
+    position: absolute;
+    left: 0px;
+    bottom: -10px;
+}
+
+.section-content img {
+    margin-top: 40px;
+}
+
+.section-content + hr {
+    display: none;
+}
+
+.section-content ul li {
+    margin-bottom: 16px;
+}
+
+.section-content ol li {
+    line-height: 24px;
+}
+
+blockquote {
+    font-family: 'Roboto';
+    font-size: 24px;
+    line-height: 32px;
+    margin: 32px 0;
+    padding-left: 16px;
+    /* border: 10px dashed purple;
+    border-left: 4px solid red;
+    border-radius: 0px 75px 75px 0px; */
+    border-left: 4px solid var(--gray10);
+}
+
+/* Selection es para un elemento que se haya seleccionado */
+/* ::selection {
+    background: red;
+} */
