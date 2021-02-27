@@ -52,22 +52,24 @@ header {
     /* --white10: red; */
     color: var(--white10);
     font-size: 14px;
-    position: absolute;
+    /*position: absolute;*/
     /* top */
     inset-block-start: 80px;
     /* end */
-    inset-block-end: 0;
+    /*inset-block-end: 0;
     inset-inline-start: -208px;
-    inline-size: 188px;
+    inline-size: 188px;*/
+    padding-inline-start: 20px;
+    padding-block-start: 20px;
 }
 
 .header {
-    position: sticky;
-    inset-block-start: -60px;
+    /* position: sticky;
+    inset-block-start: -60px; */
 }
 
 .header-content {
-    position: relative;
+    /* position: relative; */
 }
 
 header li {
@@ -126,7 +128,7 @@ pre {
     /* background-repeat: no-repeat; */
     /* background-position: left 50px top 100px; */
     /* background-size: cover; */
-    height: 350px;
+    height: 50px;
 }
 
 .section-content {
@@ -191,3 +193,108 @@ blockquote {
 /* ::selection {
     background: red;
 } */
+
+.slider {
+}
+
+.slider-container {
+    /* block-size: 100px; */
+    display: block;
+    overflow: auto;
+    scroll-behavior: smooth;
+    /* white-space hace que no vaya a la siguiente línea, 
+    sino que forzamos el overflow */
+    white-space: nowrap; 
+    font-size: 0;
+}
+
+.slider-container::-webkit-scrollbar {
+    display: none;
+}
+
+.slider-slide {
+}
+
+.slider-slide {
+    display: inline-block;
+    margin: 0;
+    width: 100%;
+    /* height: auto;
+    aspect-ratio: 16/9; */
+}
+
+.slider-bullet-list {
+    text-align: center;
+}
+
+.slider-bullet {
+    display: inline-block;
+    inline-size: 15px;
+    block-size: 15px;
+    background: var(--white10);
+    border-radius: 50%;
+}
+
+.video {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+}
+
+.form input {
+    inline-size: 100%;
+    border: 1px solid var(--white10);
+    background: transparent;
+    color: var(--white10);
+    box-sizing: border-box;
+    border-radius: 8px;
+    padding-inline: 16px;
+    padding-block: 12px;
+    font-size: 16px;
+    display: block;
+    margin-block: 24px;
+}
+
+.form input::-webkit-input-placeholder {
+    color: var(--white20);
+}
+
+.form input[ type="submit" ] {
+    background: #157EFB;
+    border: none;
+    border-radius: 8px;
+}
+
+.form input:focus {
+    
+    border: 3px solid red;
+}
+
+.form input::selection {
+    border: none;
+}
+
+@media screen and (min-width: 1366px) {
+    .hero {
+        height: 350px;
+    }
+
+    header {
+        position: absolute;
+        inset-block-start: 80px;
+        inset-block-end: 0;
+        inset-inline-start: -208px;
+        inline-size: 188px;
+        padding-inline-start: 0;
+        padding-block-start: 0;
+    }
+    
+    .header {
+        position: sticky;
+        inset-block-start: -60px;
+    }
+    
+    .header-content {
+        position: relative;
+    }
+} 
