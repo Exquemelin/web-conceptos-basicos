@@ -29,34 +29,58 @@
 /* html es igual a :root, aunque este tiene más especifidad */
 :root {
     font-size: 16px;
-    --gray10: #212121;
-    --gray20: #212429;
-    --gray30: #424242;
-    --gray40: #616161;
+    --white10: #FFFFFF;
+    --white20: #A5A3A5;
+    --white30: #3A3539;
+    --white40: #616161;
 }
 
 body {
-    color: var(--gray10);
-    font-family: 'Roboto', sans-serif;
+    background: #251F24;
+    color: var(--white10);
+    font-family: 'Nunito', sans-serif;
+    /* margin-inline: 20px;
+    margin-block: 40px; */
+    margin: 0;
 }
 
 a {
-    color: var(--gray10)
+    color: var(--white10)
 }
 
 header {
-    /* --gray10: red; */
-    color: var(--gray10);
+    /* --white10: red; */
+    color: var(--white10);
     font-size: 14px;
+    position: absolute;
+    /* top */
+    inset-block-start: 80px;
+    /* end */
+    inset-block-end: 0;
+    inset-inline-start: -208px;
+    inline-size: 188px;
+}
+
+.header {
+    position: sticky;
+    inset-block-start: -60px;
+}
+
+.header-content {
+    position: relative;
+}
+
+header li {
+    margin-block-end: 16px;
 }
 
 header a {
-    color: var(--gray40);
+    color: var(--white40);
     text-decoration: none;
 }
 
 header a:hover {
-    color: var(--gray10);
+    color: var(--white10);
 }
 
 nav details summary {
@@ -66,7 +90,9 @@ nav details summary {
 h1 {
     /* font-size: 60px; */
     font-size: 3.75em;
-    text-align: end;
+    text-align: center;
+    margin-block-start: 64px;
+    margin-block-end: 16px;
 }
 
 h2 {
@@ -77,14 +103,26 @@ h3 {
     font-size: 1.5em;
 }
 
+hr {
+    margin-block: 40px;
+    border: 1px solid rgba(97, 97, 97, 0.2);
+}
+
 pre {
-    background: #FEC62E; /* Backgroun de la ventana de código pre*/
+    background: var(--white30); /* Backgroun de la ventana de código pre*/
+    border-radius: 8px;
+    padding: 40px;
+    overflow: auto;
+    border: 5px solid #5551FF;
+    box-shadow: -10px 10px 10px 0px #ABAAF6;
+    /* border-inline-start: 5px solid orange;
+    border-block: 8px dashed purple; */
 }
 
 .hero {
     /* background: linear-gradient(to top, red, blue), url('../images/patron-1.png'); */
-    background: linear-gradient(to top, rgba(255, 255, 255, .43), transparent), url('../images/patron-1.png');
-    /* background: linear-gradient(3.36deg, #212325 -63.62%, rgba(255, 255, 255, 0) 43.49%), url('../images/patron-1.png'); */
+    /* background: linear-gradient(to top, rgba(255, 255, 255, .43), transparent), url('../images/patron-1.png'); */
+    background: linear-gradient(96.07deg, #314755 30.63%, #26A0DA 102.18%);
     /* background-repeat: no-repeat; */
     /* background-position: left 50px top 100px; */
     /* background-size: cover; */
@@ -105,12 +143,48 @@ pre {
 
 .section-content h3::after{
     content: '';
-    background: var(--gray30);
+    background: var(--white30);
     display: block;
     height: 4px;
     left: 0px;
     top: 32px;
     width: 80px;
+}
+
+.section-content img {
+    display: block;
+    margin-block-start: 40px;
+    max-inline-size: 100%;
+}
+
+.main {
+    border: 3px solid red;
+}
+
+.wrapper {
+    border: 3px solid yellow;
+    /* max-inline-size: sirve para establecer el ancho máximo que queremos
+    Pero que no haya overflow si es menos de esa medida */
+    max-inline-size: 902px;
+    margin: auto;
+}
+
+.main-content {
+    border: 3px solid blue;
+    padding-inline: 16px;
+}
+
+blockquote {
+    margin-block-start: 80px;
+    margin-block-end: 63px;
+    background-color: var(--white30);
+    border-radius: 8px;
+    font-size: 24px;
+    line-height: 32px;
+    padding-inline-start: 24px;
+    padding-inline-end: 24px;
+    padding-block-start: 24px;
+    padding-block-end: 24px;
 }
 
 /* Selection es para un elemento que se haya seleccionado */
